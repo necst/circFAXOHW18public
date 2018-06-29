@@ -36,6 +36,7 @@ task of the circular RNA identification on genome, which is the alignment proces
 The binary file of the kernel exceeded the maximum dimension of the zip file (>100MB)	
 therefore it has been uploaded on google drive, the link is avilable below.				<br />
 The doc directory contains the documentation files.										<br />
+The file alignment_sw_reference.cpp contains the reference version of the alignment algorithm in software <br />
 The file kernelAdaptive.cpp is the source file for the kernel.							<br />
 The file maincl.cpp contains the source file for the host.								<br />
 The file kseq.h is a library necessary to compile the host.								<br />
