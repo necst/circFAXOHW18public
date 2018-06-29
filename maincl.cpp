@@ -29,6 +29,29 @@ const int PASSED_BITS = DIAG_SEGMENT * 3;
 const int MAX_PASSED_LENGTH = DIAG_SEGMENT*72;
 const int MAX_N_DIAGONALS = MAX_PASSED_LENGTH*73;
 
+/*
+Given an event, this function returns the kernel execution time in ms
+*/
+float getTimeDifference(cl_event event) {
+	cl_ulong time_start = 0;
+	cl_ulong time_end = 0;
+	float total_time = 0.0f;
+
+	clGetEventProfilingInfo(event,
+		CL_PROFILING_COMMAND_START,
+		sizeof(time_start),
+		&time_start,
+		NULL);
+	clGetEventProfilingInfo(event, 
+		CL_PROFILING_COMMAND_END,
+		sizeof(time_end),
+		&time_end,
+		NULL);
+	total_time = time_end - time_start;
+	return total_time/ 1000000.0; // To convert nanoseconds to milliseconds
+}
+
+
 int load_file_to_memory(const char *filename, char **result) {
 	unsigned int size = 0;
 	FILE *f = fopen(filename, "rb");
@@ -311,6 +334,8 @@ int store_seq_as_pairs(FILE* db_fp, FILE* query_fp, cl_context& context, cl_kern
 		printf("Waiting for enqueue kernel event...\n");
 		clWaitForEvents(1, &enqueue_kernel);
 
+		std::cout << "Kernel Time " << getTimeDifference(enqueue_kernel) << std::endl;
+
 		cl_event readDirections, readResults;
 
 		printf("Enqueue read buffer (direction matrix)...\n");
@@ -344,8 +369,6 @@ int store_seq_as_pairs(FILE* db_fp, FILE* query_fp, cl_context& context, cl_kern
 	clReleaseMemObject(output_direction_matrixhw);
 	clReleaseMemObject(scalar_parameters);
 
-	//kseq_destroy(ref_seq);
-	//kseq_destroy(query_seq);
 
 	return total_pairs;
 }
@@ -418,7 +441,7 @@ int main(int argc, char* argv[]) {
 		mode = "-p";
 	}
 
-	//mode = mode.substr(1, mode.size());
+	
 	mode = "p";
 
 	//Create the necessary infrastructure to run the kernel
@@ -426,8 +449,6 @@ int main(int argc, char* argv[]) {
 
 	int err;                            // error code returned from api calls
 
-	//size_t global[2];                  // global domain size for our calculation
-	//size_t local[2];                    // local domain size for our calculation
 
 	cl_platform_id platform_id;         // platform id
 	cl_device_id device_id;             // compute device id
