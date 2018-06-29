@@ -63,7 +63,7 @@ const short W[N_BASES][N_BASES] = { { MATCH, BAD_MISMATCH, MISMATCH, MISMATCH,
 		N_MISMATCH, N_MISMATCH, MATCH } };
 
 
-//extern "C"{
+extern "C"{
 	/*
 	*	@brief: scoringKernel is the part of our kernel that computes each anti-diagonal segment
 	*			it is continuously called by the main loop in order to execute the entire direction matrix
@@ -999,5 +999,5 @@ void kernel(ap_uint<PORT_BITWIDTH> *query, ap_uint<PORT_BITWIDTH> *db,
 	std::cout << "\nNum_cycles : " << i << "\n";
 }
 
-//}
+}
 
