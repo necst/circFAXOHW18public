@@ -99,7 +99,7 @@ xclbin:  check_TARGET xo
 	$(XOCC) --platform $(TARGET_DEVICE) --target $(TARGET) --link --include $(KERNEL_HDRS) --save-temps $(REPORT) --kernel $(KERNEL_NAME) $(dest_dir)/$(KERNEL_EXE).xo $(KERNEL_LDCLFLAGS) $(KERNEL_FLAGS) $(KERNEL_ADDITIONAL_FLAGS) --output $(dest_dir)/$(KERNEL_EXE).xclbin
 
 emulation:  host xclbin
-	emconfigutil --xdevice $(TARGET_DEVICE) --nd 1 && XCL_EMULATION_MODE=$(TARGET)  ./$(dest_dir)/$(HOST_EXE) $(dest_dir)/$(KERNEL_EXE).xclbin
+	emconfigutil --xdevice $(TARGET_DEVICE) --nd 1 && XCL_EMULATION_MODE=$(TARGET)  ./$(dest_dir)/$(HOST_EXE) $(dest_dir)/$(KERNEL_EXE).xclbin ref.fasta query.fasta
 	$(info Remeber to export XCL_EMULATION_MODE=$(TARGET) and run emcondigutil for emulation purposes)
 
 #sw_emu: host xclbin
@@ -115,6 +115,5 @@ build:  host xclbin
 
 run_system:  build
 	./$(dest_dir)/$(HOST_EXE) $(dest_dir)/$(KERNEL_EXE)
-
 
 
