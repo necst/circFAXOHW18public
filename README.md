@@ -27,7 +27,6 @@ Board used: xilinx:aws-vu9p-f1:4ddr-xpr-2pr:4.0		<br />
 SDAccel Version: 2017.1.op							<br />
 
 ## Project Description	
-Brief description of project:						<br />
 CircFA is an hardware acceleration of a circular RNA aligner. Circular RNAs are a widespread type of RNA in our genome			
 that have been recently discovered to be correlated with many types of carcinogenesis and central neural system pathologies.	
 Their identfication on patients can be therefore very useful for specific diagnosis. Our solution implements the most intensive
@@ -83,3 +82,4 @@ Each files will contain a sequence of 3024 characters that will be alligned in o
 https://goo.gl/fk3jYv
 
 ## Link to YouTube Video
+https://youtu.be/2u8wR1eKqlE
