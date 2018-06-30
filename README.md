@@ -42,17 +42,16 @@ The file maincl.cpp contains the source file for the host.								<br />
 The file kseq.h is a library necessary to compile the host.								<br />
 The host_circFA file is the binary of the host file.										<br />
 
-Instructions to build and test project				<br />
-Step 1:	
+Instructions to build and test project				<br />	
 Go in the project directory and type in the terminal			<br />
 ```
 source /xilinx/software/SDx/2017.1.op/settings64.sh
 ```
-to source SDAccel									<br />
+to source SDAccel	.								<br />
 To run  a software emulation type in the terminal:                   
 ```
 make emulation TARGET=sw_emu
-```
+```                                                                                     
 To run  an hardware  emulation type in the terminal:                   
 ```
 make emulation TARGET=hw_emu
@@ -61,17 +60,17 @@ To compile the kernel and generate the bitstream type in the terminal:
 ```
 make xclbin TARGET=hw
 ```
-The bitstream will be inside the hw folder                      <br />
+The bitstream will be inside the hw folder.                    <br />
 To compile the host type in the terminal:
 ```
 make host TARGET=hw
 ```
-The host willl be inside the hw folder                              <br />
+The host willl be inside the hw folder.                             <br />
 In order to run the kernel the creation of an F1 instance is needed, 
 a complete guide for that can be found here:                  <br />
 https://github.com/Xilinx/SDAccel_Examples/wiki/Create,-configure-and-test-an-AWS-F1-instance   <br />
 For this project we used an f1.2xlarge instance.              <br />
-When both host and the kernel bitstream have been calculated to run the kernel on FPGA type on terminal
+When both host and the kernel bitstream for AWS have been generated, in order to run the kernel on FPGA type on terminal
 ```
 ./host_circFA kernel.awsxclbin ref.fasta query.fasta
 ```
