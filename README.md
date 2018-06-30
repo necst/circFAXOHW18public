@@ -29,7 +29,7 @@ SDAccel Version: 2017.1.op							<br />
 ## Project Description	
 CircFA is an hardware acceleration of a circular RNA aligner. Circular RNAs are a widespread type of RNA in our genome			
 that have been recently discovered to be correlated with many types of carcinogenesis and central neural system pathologies.	
-Their identfication on patients can be therefore very useful for specific diagnosis. Our solution implements the most intensive
+Their identification on patients can be therefore very useful for specific diagnosis. Our solution implements the most intensive
 task of the circular RNA identification on genome, which is the alignment process, on FPGA. The proposed project achieves a speedup of 1,46x for the alignment process over software.
 
 ## Project organization
