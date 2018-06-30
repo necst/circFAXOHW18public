@@ -34,34 +34,34 @@ task of the circular RNA identification on genome, which is the alignment proces
 
 ## Project organization
 The binary file of the kernel exceeded the maximum dimension of the zip file (>100MB)	
-therefore it has been uploaded on google drive, the link is avilable below.				<br />
-The doc directory contains the documentation files.										<br />
-The file alignment_sw_reference.cpp contains the reference version of the alignment algorithm in software <br />
+therefore it has been uploaded on google drive, the link is listed below.				<br />
+The doc directory contains circFA_report.pdf which is the report of our project.									<br />
+The file alignment_sw_reference.cpp contains the reference version of the alignment algorithm in software. <br />
 The file kernelAdaptive.cpp is the source file for the kernel.							<br />
 The file maincl.cpp contains the source file for the host.								<br />
 The file kseq.h is a library necessary to compile the host.								<br />
 The host_circFA file is the binary of the host file.										<br />
 
-Instructions to build and test project				<br />	
+## Instructions to build and test project				
 Go in the project directory and type in the terminal			<br />
 ```
 source /xilinx/software/SDx/2017.1.op/settings64.sh
 ```
 to source SDAccel	.								<br />
-To run  a software emulation type in the terminal:                   
+To run a software emulation, type in the terminal:                   
 ```
 make emulation TARGET=sw_emu
 ```                                                                                     
-To run  an hardware  emulation type in the terminal:                   
+To run an hardware  emulation, type in the terminal:                   
 ```
 make emulation TARGET=hw_emu
 ```
-To compile the kernel and generate the bitstream type in the terminal:
+To compile the kernel and generate the bitstream, type in the terminal:
 ```
 make xclbin TARGET=hw
 ```
 The bitstream will be inside the hw folder.                    <br />
-To compile the host type in the terminal:
+To compile the host, type in the terminal:
 ```
 make host TARGET=hw
 ```
