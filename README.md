@@ -82,7 +82,7 @@ Each files will contain a sequence of 3024 characters that will be alligned in o
 https://goo.gl/fk3jYv
 
 ## Link to YouTube Video
-https://youtu.be/2u8wR1eKqlE
+https://youtu.be/nHDAhXOTM4A
 
 ## Link to Github repository
 https://github.com/albertozeni/circFAXOHW18public
