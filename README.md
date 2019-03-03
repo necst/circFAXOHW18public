@@ -43,11 +43,7 @@ The file kseq.h is a library necessary to compile the host.								<br />
 The host_circFA file is the binary of the host file.										<br />
 
 ## Instructions to build and test project				
-Go in the project directory and type in the terminal			<br />
-```
-source /xilinx/software/SDx/2017.1.op/settings64.sh
-```
-to source SDAccel	.								<br />
+Go in the project directory and source SDAccel.								<br />
 To run a software emulation, type in the terminal:                   
 ```
 make emulation TARGET=sw_emu
@@ -84,4 +80,4 @@ https://goo.gl/fk3jYv
 https://youtu.be/nHDAhXOTM4A
 
 ## Link to Github repository
-https://github.com/albertozeni/circFAXOHW18public
+https://github.com/necst/circFAXOHW18public
